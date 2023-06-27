@@ -24,7 +24,7 @@ class _BotonesServiciosState extends State<BotonesServicios> {
 
 Container Enviar_Datos(BuildContext context) {
   return Container(
-    margin: EdgeInsets.only(top: 50,left: 20,right: 20),
+    margin: EdgeInsets.only(top: 20,left: 20,right: 20),
     width: 400,
     height: 50,
     child: ElevatedButton.icon(
@@ -69,7 +69,7 @@ class BotonesServiciosdos extends StatelessWidget {
 
   Container unirAlEquipo(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 50, left: 20, right: 20),
+      margin: EdgeInsets.only(top: 30, left: 20, right: 20),
       width: 400,
       height: 60,
       child: ElevatedButton(
@@ -103,7 +103,7 @@ class BotonesServiciosdos extends StatelessWidget {
 
   Container solicitarServicio(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 50, left: 20, right: 20),
+      margin: EdgeInsets.only(top: 25, left: 20, right: 20),
       width: 200,
       height: 60,
       child: ElevatedButton(

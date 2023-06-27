@@ -17,7 +17,7 @@ class ServiciosDos extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 1270,
+              height: 1180,
               color: Color.fromARGB(255, 160, 132, 220),
               child: Column(
                 children: [
@@ -25,7 +25,7 @@ class ServiciosDos extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     height: 30,
-                    color: Colors.amber,
+                    color: Color.fromARGB(250, 161, 157, 231),
                     margin: EdgeInsets.only(top: 10,left: 20,right: 20),
                     child: Center(child: Text(
                         "Visita Domiciliaria",
@@ -74,7 +74,7 @@ class ServiciosDos extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     height: 30,
-                    color: Colors.amber,
+                    color: Color.fromARGB(250, 161, 157, 231),
                     margin: EdgeInsets.only(top: 15,left: 20,right: 20),
                     child: Center(child: Text(
                       "Entrenamiento Basico",
@@ -125,7 +125,7 @@ class ServiciosDos extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     height: 30,
-                    color: Colors.amber,
+                    color: Color.fromARGB(250, 161, 157, 231),
                     margin: EdgeInsets.only(top: 15, left: 20, right: 20),
                     child: Center(
                       child: Text(
@@ -152,21 +152,20 @@ class ServiciosDos extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     height: 50,
-                    margin: EdgeInsets.only(top: 20, left: 25),
-
-                      child: Center(
-                        child: Text(
-                          "Gracias a nuestro avanzado sistema, podras  localizar tu mascota en tiempo real",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 186, 242, 115),
-
-                          ),
+                    margin: EdgeInsets.only(top: 15, left: 25),
+                    child: Center(
+                      child: Text(
+                        "Gracias a nuestro avanzado sistema, podrás localizar tu mascota en tiempo real",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 186, 242, 115),
                         ),
+                        textAlign: TextAlign.center,
                       ),
-
+                    ),
                   ),
+
 
                   Container(
                      child: BotonesServiciosdos(),

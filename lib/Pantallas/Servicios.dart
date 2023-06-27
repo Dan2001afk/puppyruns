@@ -1,4 +1,4 @@
-import 'package:PuppyRuns/Pantallas/pantallaunoLogin.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:PuppyRuns/Widgets/BotonesServicios.dart';
 import 'package:flutter/material.dart';
 class Servicios extends StatelessWidget {
@@ -16,18 +16,21 @@ class Servicios extends StatelessWidget {
           children: [
       Container(
         width: double.infinity,
-        height: 1270,
+        height: 1560,
         color: Color.fromARGB(255, 160, 132, 220),
         child: Column(
           children: [
+            Container(
+              child: CarouselExample(),
+            ),
 //imagen 1
             Container(
               width: double.infinity,
               height: 30,
-              color: Colors.amber,
+              color: Color.fromARGB(250, 161, 157, 231),
               margin: EdgeInsets.only(top: 10,left: 20,right: 20),
               child: Center(child: Text(
-                  "Pasea Tu Mascota En Cicla",
+                  "Paseo En Cicla",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                   )
@@ -73,10 +76,10 @@ class Servicios extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 30,
-              color: Colors.amber,
+              color: Color.fromARGB(250, 161, 157, 231),
               margin: EdgeInsets.only(top: 10,left: 20,right: 20),
               child: Center(child: Text(
-                  "Pasea Tu Mascota En Moto",
+                  "Paseo En Moto",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                 ),
@@ -124,11 +127,11 @@ class Servicios extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 30,
-              color: Colors.amber,
+              color: Color.fromARGB(250, 161, 157, 231),
               margin: EdgeInsets.only(top: 10, left: 20, right: 20),
               child: Center(
                 child: Text(
-                  "Cuidado de mascotas durante las vacaciones",
+                  "Cuidado durante las vacaciones",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                   ),
@@ -185,3 +188,92 @@ class Servicios extends StatelessWidget {
     );
   }
 }
+
+
+
+
+class CarouselExample extends StatelessWidget {
+  final List<String> imageList = [
+    'img/cuidadoVacaciones.jpg',
+    'img/cuidadoVacaciones.jpg',
+    'img/cuidadoVacaciones.jpg',
+    'img/cuidadoVacaciones.jpg',
+    'img/cuidadoVacaciones.jpg',
+  ];
+
+  final List<String> textList = [
+    'Paseos grupales',
+    'Paseos individuales',
+    'Alimentación y agua',
+    'Administración de medicamentos',
+    'Juego y estimulación',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: CarouselSlider(
+        options: CarouselOptions(
+          height: 300,
+          enlargeCenterPage: true,
+          autoPlay: true,
+          aspectRatio: 16 / 9,
+          autoPlayCurve: Curves.fastOutSlowIn,
+          enableInfiniteScroll: true,
+          autoPlayAnimationDuration: Duration(milliseconds: 2000),
+          viewportFraction: 0.8,
+        ),
+        items: imageList.asMap().entries.map((entry) {
+          final int index = entry.key;
+          final String imageUrl = entry.value;
+          final String text = textList[index];
+
+          return Builder(
+            builder: (BuildContext context) {
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 134, 96, 206),
+                ),
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          child: Text(
+                            text,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        }).toList(),
+      ),
+    );
+  }
+}
+
+
+
+
+
